@@ -1,0 +1,38 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.header-box{
+  width: 250px;
+  height: 80px;
+  background-color: rgba(79, 93, 56, .85);
+  border-radius: 7px;
+  .name{
+    padding-top: 15px;
+    text-align: center;
+    a{
+      font-family: fantasy;
+      font-size: 38px;
+      font-weight: bold;
+      color: rgb(4, 52, 80);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.well{
+  height: 200px;
+  background: no-repeat center url(http://images.media-allrecipes.com/ar-images/profiles/covers/salsa-mexican-food-1300x200.jpg);
+  background-size: 100% 100%;
+}
