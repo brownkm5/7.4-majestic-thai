@@ -12,6 +12,10 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
   box-sizing: border-box;
 }
 
+li{
+  list-style: none; 
+}
+
 .header-box{
   width: 250px;
   height: 80px;
@@ -31,8 +35,10 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
   }
 }
 
-.well{
-  height: 200px;
-  background: no-repeat center url(http://images.media-allrecipes.com/ar-images/profiles/covers/salsa-mexican-food-1300x200.jpg);
-  background-size: 100% 100%;
+header{
+  .well{
+    height: 200px;
+    background: no-repeat center url(http://images.media-allrecipes.com/ar-images/profiles/covers/salsa-mexican-food-1300x200.jpg);
+    background-size: 100% 100%;
+  }
 }
