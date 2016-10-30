@@ -4,9 +4,12 @@ var SoupSaladCollection = require('../models/menu.js').SoupSaladCollection;
 
 var SoupSaladComponent = React.createClass({
   addItem: function(item){
-    console.log(item.get('price'));
+    var itemData = {title:item.get('item'), price: item.get('price')};
+    this.props.addItem(itemData);
+    console.log('itemdata', itemData);
   },
   render: function(){
+    //got the bind code from peter
     var collection = this.props.collection;
     var soupSaladList = collection.map(function(item){
       var addItem = this.addItem.bind(this, item);
@@ -48,7 +51,7 @@ var MenuContainer = React.createClass({
   },
   render: function(){
     return (
-      <SoupSaladComponent collection={this.state.soupSaladCollection}/>
+      <SoupSaladComponent addItem={this.props.addItem} collection={this.state.soupSaladCollection}/>
     )
   }
 });

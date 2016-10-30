@@ -13,24 +13,25 @@ var AppComponent = React.createClass({
   getInitialState: function(){
     var self = this;
     var orderList =  new OrderCollection();
-
+    console.log(orderList);
     orderList.fetch().then(function(){
       self.setState({orderCollection: orderList});
     });
-    
+
     return {
       orderCollection: orderList
     }
   },
-  // addItem: function(itemModel){
-  //   this.state.orderCollection.create(itemModel);
-  //   this.setState({orderCollection: this.state.orderCollection});
-  // },
+  addItem: function(itemModel){
+    this.state.orderCollection.create(itemModel);
+    this.setState({orderCollection: this.state.orderCollection});
+    console.log('ordercollection', this.state.orderCollection);
+  },
   render: function(){
     return(
       <div className='contain'>
         <HeaderComponent />
-        <MenuContainer />
+        <MenuContainer addItem={this.addItem}/>
       </div>
     )
   }
