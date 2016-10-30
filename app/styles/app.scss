@@ -13,7 +13,7 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 li{
-  list-style: none; 
+  list-style: none;
 }
 
 .header-box{
@@ -34,11 +34,32 @@ li{
     }
   }
 }
-
+//header template
 header{
   .well{
     height: 200px;
     background: no-repeat center url(http://images.media-allrecipes.com/ar-images/profiles/covers/salsa-mexican-food-1300x200.jpg);
     background-size: 100% 100%;
+  }
+}
+
+//orderform
+.order-header{
+  text-align: center;
+}
+.item-column, .price-column {
+  display: inline-block;
+}
+.item-column{
+  // text-align: left;
+  margin-left: 20px;
+}
+.price-column{
+  margin-left: 200px;
+}
+.order-form{
+  margin-top: 55px;
+  ul{
+    padding-left: 0px;
   }
 }
