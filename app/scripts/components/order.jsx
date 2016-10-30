@@ -22,10 +22,10 @@ var OrderCalculator = React.createClass({
     // console.log(priceArray);
     var numberConvertedArray = priceArray.map(Number);
     console.log(numberConvertedArray);
-    var total = numberConvertedArray.reduce(function(previousValue, currentValue){
+    var subtotal = numberConvertedArray.reduce(function(previousValue, currentValue){
       return previousValue + currentValue;
     },0);
-    console.log(total);
+    console.log(subtotal);
     return(
         <div>
           <div className="item-column">
@@ -36,6 +36,7 @@ var OrderCalculator = React.createClass({
             <h3 className='price'>Price</h3>
             <ul>{priceList}</ul>
           </div>
+          <p><span className='total'>Subtotal</span><span className='subtotal'>{subtotal}</span></p>
         </div>
     )
   }
