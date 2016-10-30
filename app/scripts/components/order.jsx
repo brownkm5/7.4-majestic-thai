@@ -7,6 +7,10 @@ function Header(){
 }
 
 var OrderCalculator = React.createClass({
+  handleSubmit: function(){
+    var collection = this.props.collection;
+    this.props.handleSubmit(this.props.collection);
+  },
   render: function(){
     var collection = this.props.collection;
     //console.log(collection);
@@ -37,6 +41,9 @@ var OrderCalculator = React.createClass({
             <ul>{priceList}</ul>
           </div>
           <p><span className='total'>Subtotal</span><span className='subtotal'>{subtotal}</span></p>
+          <div className="button-div">
+            <button onClick={this.handleSubmit} className='submit-order btn btn-default' type="button" name="button">Submit Order</button>
+          </div>
         </div>
     )
   }
@@ -49,7 +56,7 @@ var OrderContainer = React.createClass({
           <div className='col-sm-5 col-sm-offset-1'>
             <div className='well'>
               <Header />
-              <OrderCalculator collection={this.props.collection}/>
+              <OrderCalculator collection={this.props.collection} handleSubmit={this.props.handleSubmit}/>
             </div>
           </div>
         </div>

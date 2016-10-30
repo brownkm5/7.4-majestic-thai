@@ -27,13 +27,18 @@ var AppComponent = React.createClass({
     this.setState({orderCollection: this.state.orderCollection});
     //console.log('ordercollection', this.state.orderCollection);
   },
+  handleSubmit: function(collection){
+  console.log(collection);
+  collection.destroy();
+  this.setState({orderCollection: this.state.orderCollection});
+},
   render: function(){
     //console.log(this.state.ordercollection);
     return(
       <div className='contain'>
         <HeaderComponent />
         <MenuContainer addItem={this.addItem}/>
-        <OrderContainer collection={this.state.orderCollection}/>
+        <OrderContainer collection={this.state.orderCollection} handleSubmit={this.handleSubmit}/>
       </div>
     )
   }
