@@ -14,10 +14,10 @@ var AppComponent = React.createClass({
     var self = this;
     var orderList =  new OrderCollection();
 
-    orderList.fetch().then(function(){
-      self.setState({orderCollection: orderList});
-
-    });
+    // orderList.fetch().then(function(){
+    //   self.setState({orderCollection: orderList});
+    //
+    // });
     return {
       orderCollection: orderList
     }
@@ -29,8 +29,8 @@ var AppComponent = React.createClass({
   },
   handleSubmit: function(collection){
   console.log(collection);
-  collection.destroy();
-  this.setState({orderCollection: this.state.orderCollection});
+  var newOrder = new OrderCollection();
+  this.setState({orderCollection: newOrder});
 },
   render: function(){
     //console.log(this.state.ordercollection);

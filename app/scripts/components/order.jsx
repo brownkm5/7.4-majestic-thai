@@ -20,27 +20,31 @@ var OrderCalculator = React.createClass({
     var priceList = collection.map(function(item){
       return <li key={item.get('_id') || item.cid} className='item-price'>{item.get('price')}</li>
     });
+    //move this stuff to collection {this.props.collection.total()
+    //make an array with just the prices in it to find the total price
     var priceArray = collection.map(function(item){
       return item.get('price');
     });
-    // console.log(priceArray);
+    // converts string values in the array to integer values
     var numberConvertedArray = priceArray.map(Number);
-    console.log(numberConvertedArray);
-    var subtotal = numberConvertedArray.reduce(function(previousValue, currentValue){
+    // reduce those values into the total price
+    var total = numberConvertedArray.reduce(function(previousValue, currentValue){
       return previousValue + currentValue;
     },0);
+    //make the total have only two decimal values
+    var subtotal = total.toFixed(2);
     console.log(subtotal);
     return(
-        <div>
+        <div className='order-box'>
           <div className="item-column">
             <h3 className='item'>Item</h3>
-            <ul>{itemList}</ul>
+            <ul className='height'>{itemList}</ul>
           </div>
           <div className='price-column'>
             <h3 className='price'>Price</h3>
             <ul>{priceList}</ul>
           </div>
-          <p><span className='total'>Subtotal</span><span className='subtotal'>{subtotal}</span></p>
+          <div className='subtotal-area'><h3 className='total'>Subtotal</h3><span className='subtotal'>$ {subtotal}</span></div>
           <div className="button-div">
             <button onClick={this.handleSubmit} className='submit-order btn btn-default' type="button" name="button">Submit Order</button>
           </div>
