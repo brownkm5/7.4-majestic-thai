@@ -5787,8 +5787,13 @@ header .well {
   background: no-repeat center url(http://images.media-allrecipes.com/ar-images/profiles/covers/salsa-mexican-food-1300x200.jpg);
   background-size: 100% 100%; }
 
+.height {
+  height: 200px; }
+
 .order-header {
-  text-align: center; }
+  text-align: center;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px; }
 
 .item-column, .price-column {
   display: inline-block; }
@@ -5804,10 +5809,18 @@ header .well {
   .order-form ul {
     padding-left: 0px; }
   .order-form .total {
-    margin-right: 200px;
-    margin-left: 20px; }
+    margin-right: 190px;
+    margin-left: 20px;
+    display: inline-block; }
 
 .button-div {
   text-align: center; }
+
+.subtotal-area {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin-bottom: 20px; }
+  .subtotal-area .subtotal {
+    display: inline-block; }
 
 /*# sourceMappingURL=app.css.map */
